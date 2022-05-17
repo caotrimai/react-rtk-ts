@@ -3,3 +3,5 @@ export const handleRequest = (promise: Promise<any>) => {
     .then((response) => ([response, undefined]))
     .catch((error) => ([undefined, error]))
 }
+
+export default handleRequest

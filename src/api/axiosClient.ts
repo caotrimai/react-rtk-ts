@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+// Please have a look at here `https://github.com/axios/axios#request-config` for the full list of configs
+
 const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   headers: {
@@ -20,5 +22,11 @@ axiosClient.interceptors.response.use(function (response) {
   // Do something with response error
   return Promise.reject(error);
 });
+
+const contentTypeFormData = { 'content-type': 'multipart/form-data' };
+
+export const axiosConfig = {
+  contentFormData: contentTypeFormData,
+};
 
 export default axiosClient

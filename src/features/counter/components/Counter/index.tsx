@@ -8,11 +8,11 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
+} from '../../redux/counterSlice';
 // @ts-ignore
 import styles from './Counter.module.scss';
 
-export function Counter() {
+export default function Counter() {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');

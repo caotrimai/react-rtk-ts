@@ -1,15 +1,18 @@
 import React from 'react';
-import { store } from '~/app/store';
-import { Provider } from 'react-redux';
+import {store} from '~/app/store';
+import {Provider} from 'react-redux';
+import DefaultStyleVariables from '~/components/DefaultStyleVariables';
 import GlobalStyles from '~/components/GlobalStyle';
 
 // @ts-ignore
-export default function RootWrapper({ children }) {
+export default function RootWrapper({children}) {
   return (
     <Provider store={store}>
-      <GlobalStyles>
-        {children}
-      </GlobalStyles>
+      <DefaultStyleVariables>
+        <GlobalStyles>
+          {children}
+        </GlobalStyles>
+      </DefaultStyleVariables>
     </Provider>
   );
 }
